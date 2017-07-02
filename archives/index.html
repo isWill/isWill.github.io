@@ -1,253 +1,334 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        
-        <title>Archive | 枫林晚</title>
-        
-        <link rel="alternate" href="/atom.xml" title="枫林晚" type="application/atom+xml">
-        
-        
-        <link rel="icon" href="//favicon.png">
-        
-        <link rel="stylesheet" href="/css/normalize.css">
-        <link rel="stylesheet" href="/css/style.css">
-        <link rel="stylesheet" href="/css/common.css">
-        <link rel="stylesheet" href="/css/markdown.css">
-    </head>
-    <body onscroll="scrollYListener()">
-        <div class="wrapper">
-            <div class="mobile_menu_btn">
-  <button id="mobile_menu_btn" class="c-hamburger c-hamburger--htx">
-  <span>toggle menu</span>
-  </button>
-</div>
-<div class="slide_menu">
-  <nav class="nav_scroll">
-    <ul class="clearfix">
-      
-      
-      <li class=""> <a href="/">Home</a> </li>
-      
-      
-      <li class="active"> <a href="/archives">Archive</a> </li>
-      
-    </ul>
-  </nav>
-  <div class="social">
-    <ul class="clearfix">
-      
-      
-      <li> <a href="http://github.com/cheng-kang" target="_blank"> <img src="/img/GitHub.png"> </a> </li>
-      
-      
-      
-      <li> <a href="http://www.weibo.com/progrant" target="_blank"> <img src="/img/Weibo.png"> </a> </li>
-      
-      
-      
-      <li> <a href="https://twitter.com/ScotlAnt" target="_blank"> <img src="/img/Twitter.png"> </a> </li>
-      
-      
-      
-      
-    </ul>
-  </div>
-  <div class="copyright">
-    &copy; 2017 枫林晚 | Provided By  <a title="Will" href="http://chengkang.me/" target="_blank">Will</a>
-  </div>
-</div>
-<header>
-  <div class="mobile_navbar clearfix">
-    
-    <div class="logo">
-      <a href="/">枫林晚</a>
-    </div>
-    
-  </div>
-  <div class="row clearfix no_form">
-    <div class="logo">
-      <a href="/">枫林晚</a>
-    </div>
-    <nav class="nav_scroll">
-      <ul class="clearfix">
-      
-      
-      <li class=""> <a href="/">Home</a> </li>
-      
-      
-      <li class="active"> <a href="/archives">Archive</a> </li>
-      
-      </ul>
-    </nav>
-  </div>
-</header>
-            <div class="section" id="Search">
-	<div class="section_content">
-		<h3>
-		Search
-		<br>
-		Find out if your question is answered here
-		</h3>
-		<div id="search-content" class="search-content-modal unexpanded">
-			<div id="search-view">
-				<div class="search-info box">
-					<input type="text" id="search-input" placeholder="Enter Keyword" onkeyup="searchInputOnKeyUp()">
-					<div class="magnifying-glass" id="search-button" onclick="searchInSite(event)">
-						<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 500 500">
-						<path fill="none" stroke="#fff" stroke-width="36" stroke-linecap="round" d="m280,278a153,153 0 1,0-2,2l170,170m-91-117 110,110-26,26-110-110"></path>
-					</svg>
-				</div>
-			</div>
-			<div class="modal" id="search-result" style="display:none">
-				<h2 id="search-result-title">Found 0 match(es):</h2>
-				<ul id="search-result-list">
-				</ul>
-				<span>
-					<button onclick="dismissSearchResultModal()">×</button>
-				</span>
-			</div>
-		</div>
-	</div>
-</div>
+<html lang="zh-cn">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="旧时南都" />
 
 
-<script src="/js/lunr.min.js"></script>
-<script>
-var content = lunr(function () {
-this.field('title');
-this.field('content');
-this.ref('id');
-})
-	var postsAllText = (function () {/*::qa::lurn::qa::first::qa::lurn::qa::http://full.rocks/2017/06/28/first/::qa::lurn::qa::&lt;p&gt;你好，欢迎来到我的个人技术博客。&lt;/p&gt;
-::qa::lurn::qa::Hello World::qa::lurn::qa::http://full.rocks/2017/06/28/hello-world/::qa::lurn::qa::&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo server&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo generate&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo deploy&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
-::qa::lurn::qa::*/}).toString();
-	var arr = postsAllText.split("::qa::lurn::qa::");
-	for(var i = 1; i+2 <= arr.length - 3; i+=3) {
-	content.add({
-	id: Math.floor(i/3),
-	title: arr[i],
-	content: arr[i+2]
-	});
-	}
-	function searchInSite() {
-		var keyword = document.getElementById("search-input").value;
-		var result = content.search(keyword);
-		if (result.length == 0) {
-			document.getElementById("search-result-title").innerHTML = "Found 0 match.";
-		} else {
-			document.getElementById("search-result-title").innerHTML = "Found "+result.length+" match(es):";
-		}
-		document.getElementById("search_result_list").innerHTML = "";
-		for(var i = 0; i < result.length; i++) {
-			document.getElementById("search-result-list").innerHTML += '<li><a href="'+arr[result[i].ref*3+2]+'">'+arr[result[i].ref*3+1]+'</a></li>';
-		}
-		document.getElementById("search-result").style.display = "block";
-	}
-	function searchInputOnKeyUp() {
-		event.preventDefault();
-	if (event.keyCode == 13) {
-	searchInSite();
-	}
-	}
-</script>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="旧时南都">
+<meta property="og:url" content="http://full.rocks/archives/index.html">
+<meta property="og:site_name" content="旧时南都">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="旧时南都">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="旧时南都" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Archives | 旧时南都</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
 
 <script>
-function dismissSearchResultModal() {
-	document.getElementById("search-result").style.display = "none";
-}
+    var yiliaConfig = {
+        fancybox: true,
+        animate: false,
+        isHome: false,
+        isPost: false,
+        isArchive: true,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
 </script>
-</div>
-<div class="section" id="Archive">
-    <h2 class="center">Archive</h2>
-    <div class="post-list">
-        
-        
-        
-        
-        
-        
-        
-        <h4>2017</h4>
-        
-        <p class="post-title"><span>2017年6月28日</span><a href="/2017/06/28/first/">first</a></p>
-        
-        
-        
-        
-        
-        <p class="post-title"><span>2017年6月28日</span><a href="/2017/06/28/hello-world/">Hello World</a></p>
-        
-    </div>
-</div>
 
-	
-	
-	
 
-            <footer>
-	<div class="footer_wrap">
-		<div class="social">
-			<ul class="clearfix">
-				
-				
-				<li> <a href="http://github.com/cheng-kang" target="_blank"> <img src="/img/GitHub.png"> </a> </li>
-				
-				
-				
-				<li> <a href="http://www.weibo.com/progrant" target="_blank"> <img src="/img/Weibo.png"> </a> </li>
-				
-				
-				
-				<li> <a href="https://twitter.com/ScotlAnt" target="_blank"> <img src="/img/Twitter.png"> </a> </li>
-				
-				
-				
-				
-			</ul>
-		</div>
-		<img src="/img/line.jpg">
-		<div class="copyright">
-			&copy; 2017 枫林晚 | Provided By  <a title="Will" href="http://chengkang.me/" target="_blank">Will</a>
-		</div>
-	</div>
-</footer>
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/cd.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">旧时南都</a></h1>
+        </hgroup>
+
+        
+
+        
+
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:wilhelm2014@163.com" title="Email"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
         </div>
-        <script type="text/javascript">
-        function scrollYListener() {
-        var searchHeight = parseInt(getComputedStyle(document.getElementById("Search")).height)
-        var width = document.documentElement.clientWidth;
-        var supportPageOffset = window.pageXOffset !== undefined;
-        var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
-        var scrollY = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
-        if (scrollY >= searchHeight-10) {
-        document.getElementsByTagName('header')[0].style.backgroundColor = "#cd4b4b";
-        document.getElementsByClassName('logo')[0].style.backgroundColor = "#cd4b4b";
-        } else {
-        document.getElementsByTagName('header')[0].style.backgroundColor = "#4f8e8e";
-        document.getElementsByClassName('logo')[0].style.backgroundColor = "#4f8e8e";
-        }
-        }
-        var isMenuExpanded = false;
-        document.getElementById("mobile_menu_btn").onclick = function toggleMobileMenu() {
-        if (isMenuExpanded) {
-        document.getElementsByClassName('slide_menu')[0].className = "slide_menu";
-        } else {
-        document.getElementsByClassName('slide_menu')[0].className += " mobile_menu_active";
-        }
-        isMenuExpanded = !isMenuExpanded;
-        }
-        </script>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">旧时南都</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/cd.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">旧时南都</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:wilhelm2014@163.com" title="Email"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap">
+  
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2017/07/02/es6-is-great-but-use-it-cautiously-sergey-abakumoff-medium.html/" class="archive-article-date">
+      <time datetime="2017-07-02T12:50:04.000Z" itemprop="datePublished">07-02</time>
+</a>
+
+
+        </div>
+         
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/07/02/es6-is-great-but-use-it-cautiously-sergey-abakumoff-medium.html/">【转】ES6虽好，使用需谨慎</a>
+    </h1>
+  
+
+        <div class="article-info info-on-archive">
+          
+
+          
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
+
+    
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2017 旧时南都
+            </div>
+        </div>
         
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
         
-    </body>
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+            
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
 </html>

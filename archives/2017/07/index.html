@@ -14,13 +14,10 @@
 <meta name="author" content="旧时南都" />
 
 
-    
-    
-
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="旧时南都">
-<meta property="og:url" content="http://full.rocks/index.html">
+<meta property="og:url" content="http://full.rocks/archives/2017/07/index.html">
 <meta property="og:site_name" content="旧时南都">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="旧时南都">
@@ -53,7 +50,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>旧时南都</title>
+<title>Archives: 2017/7 | 旧时南都</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -62,9 +59,9 @@
     var yiliaConfig = {
         fancybox: true,
         animate: false,
-        isHome: true,
+        isHome: false,
         isPost: false,
-        isArchive: false,
+        isArchive: true,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -205,104 +202,50 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-es6-is-great-but-use-it-cautiously-sergey-abakumoff-medium.html" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2017/07/02/es6-is-great-but-use-it-cautiously-sergey-abakumoff-medium.html/" class="article-date">
-      <time datetime="2017-07-02T12:50:04.000Z" itemprop="datePublished">2017-07-02</time>
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2017/07/02/es6-is-great-but-use-it-cautiously-sergey-abakumoff-medium.html/" class="archive-article-date">
+      <time datetime="2017-07-02T12:50:04.000Z" itemprop="datePublished">07-02</time>
 </a>
 
 
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
+        </div>
+         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/02/es6-is-great-but-use-it-cautiously-sergey-abakumoff-medium.html/">【转】ES6虽好，使用需谨慎</a>
+      <a class="archive-article-title" href="/2017/07/02/es6-is-great-but-use-it-cautiously-sergey-abakumoff-medium.html/">【转】ES6虽好，使用需谨慎</a>
     </h1>
   
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        <div class="article-info info-on-archive">
           
-        <blockquote>
-<p>原文：<a href="https://www.h5jun.com/post/es6-is-great-but-use-it-cautiously-sergey-abakumoff-medium.html" target="_blank" rel="external">https://www.h5jun.com/post/es6-is-great-but-use-it-cautiously-sergey-abakumoff-medium.html</a></p>
-</blockquote>
-<p>几天前我看到一条令人忍俊不禁的 tweet。</p>
-<p><img src="https://p1.ssl.qhimg.com/t01304ac0dfa355c1d9.png" alt=""></p>
-<blockquote>
-<p>看到上面那段代码，我脑补了一个场景：<br>“让我们使用新潮的 ES6 解构”<br>“它看起来好难懂”<br>“别怕！我会为它添加一个注释”</p>
-</blockquote>
-<p>这的确搞笑，但同时它这是一种典型的货物崇拜编程 —— 盲目而仪式性地使用代码或程序结构。你也许觉得上面的例子是一个特定的 case，一段新奇而在现实中不会存在的代码，但是让我们从一个实际项目里来看一段代码，这个项目叫 Calypso，它在 GitHub 上获得了超过 8000 的 star 数。</p>
-<blockquote>
-<p>Calypso 是最新的 WrodPress.com 前端，它重新设计了一个漂亮的 WordPress dashboard，使用单页应用的形式，采用了 WordPress 的 REST API。Calypso 让你能够在同一处阅读、书写和管理你的 WordPress 站点。</p>
-</blockquote>
-<p>这个项目在技术选型上非常激进，它使用了 react、redux、webpack、babel 以及 其他 150 个 npm 包，依赖了这么多新潮技术，它的参与者们应当可以写现代的、干净的、易于阅读和高可维护性的代码，不是吗？让我们看一下。不过在这之前，如果你对 redux 不熟悉，这里有一些速成课 —— reducer 是一个 纯函数，它接受两个参数，对其进行某些运算然后返回新对象，它基本上就是这么一回事。一个基础的 reducer 例子如下，它添加一个新的项到 TODO list 里：</p>
-<p><img src="https://p1.ssl.qhimg.com/t01c096b8fbf3a23e64.jpg" alt=""></p>
-<p>多个 reducer 可以被组合在单个对象中，对象的属性名是各个 reducer 的名字，对应属性值是 reducer 函数。下面给出一段代码，它是众多 Calypso reducer 中的一个，我稍微改动了一点点，原始代码在<a href="https://github.com/Automattic/wp-calypso/blob/master/client/state/sharing/publicize/reducer.js" target="_blank" rel="external">这里</a></p>
-<p><img src="https://p4.ssl.qhimg.com/t0122e30c04057b1023.jpg" alt=""></p>
-<p>要弄明白上面这段代码究竟在做什么，你要花多长时间？如果你一下子就看明白了，那么恭喜你，你是真正的 JavaScript 忍者，因为，小伙子，你看，这段代码最大程度上使用了 ES6 甚至 ES7！</p>
-<ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const" target="_blank" rel="external">const 声明</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#Computed_property_names" target="_blank" rel="external">计算属性名</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" target="_blank" rel="external">函数参数解构</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank" rel="external">箭头函数</a></li>
-<li><a href="https://github.com/tc39/proposal-object-rest-spread/blob/master/Spread.md" target="_blank" rel="external">对象属性展开</a> —— 这甚至还没有在标准里，而我们今天就可以使用它，酷毙了！</li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#Property_definitions" target="_blank" rel="external">属性声明简写</a></li>
-</ul>
-<p>但是对于我，和许多像我一样的程序员，都会觉得上面那段代码像是行为艺术，它太难理解了，而如果我要实现同样的功能，我会用有点不同的方式来实现。这个 reducer 其实是用来在给定的网站上更新一篇已发表文章的状态，那么我们可以这么写：</p>
-<p><img src="https://p1.ssl.qhimg.com/t01f9906a422a2777b7.jpg" alt=""></p>
-<p>而如果你认为两个版本不同只是个人品位问题，那么让我来分析一下原版那段胡里花哨的代码中更严重的问题。首先，不管是原版还是我这一版代码都需要被“编译”成老版本浏览器能够支持的 JavaScript，我将通过 <a href="https://babeljs.io/repl/" target="_blank" rel="external">Babel REPL</a> 生成的代码大小对比如下（点击“完整代码”查看编译后的代码）：</p>
-<ul>
-<li>原版 —— <a href="https://gist.github.com/sAbakumoff/2b0ed1699ab6020e1b49faacca483f3f" target="_blank" rel="external">完整代码</a>：2012 字节，压缩后：1524 字节。</li>
-<li>我的版本 —— <a href="https://gist.github.com/sAbakumoff/14118c1fe71d2810c8615ac01d12a8d3" target="_blank" rel="external">完整代码</a>：1390 字节，压缩后：1019 字节。</li>
-</ul>
-<p>两者的不同看起来可能很小，但是在像 Calypso 这样的庞大项目里，类似上面那样的代码如果没有成千上万行也有成百上千行，它们若全部以货物崇拜的方式书写，可能会让 JS 脚本的大小显著增加，而这是我们为了优化<a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/" target="_blank" rel="external">关键渲染路径</a>需要极力避免的。</p>
-<p>此外，我修改过的这一版 reducer 运行得更快。我把 <a href="https://jsperf.com/fancy-vs-humble" target="_blank" rel="external">JSPerf 测试</a>放在一起对比来证明我的版本比较快，下面是两个版本的测试在 chrome 中的运行结果截屏：</p>
-<p><img src="https://p0.ssl.qhimg.com/t01f8f808fa7fc4c7bd.png" alt=""></p>
-<p>注意到我这一版代码也使用了 ES6 特性，但是它并没有过分追求花哨地去尝试使用每一个时髦特性，最终写出来的代码也更易读，更快和更小。而且我甚至还可以进一步优化它！让我用我最喜欢的编程语录来结束这篇文章。</p>
-<p><img src="https://p0.ssl.qhimg.com/t011f7c51f86a035d01.png" alt=""></p>
-<blockquote>
-<p>在写代码时要想象最终维护你的代码的人是个有暴力倾向的精神病患者，而且他知道你住在哪儿（这样你就能更谨慎地写好代码了）。<br>John F. Woods, 1991 年 11 月<br>英文原文：<a href="https://medium.com/@sAbakumoff/es6-is-great-until-its-not-f398339d0af6#.78utf613c" target="_blank" rel="external">https://medium.com/@sAbakumoff/es6-is-great-until-its-not-f398339d0af6#.78utf613c</a></p>
-</blockquote>
-<p>本文链接：<a href="http://full.rocks//2017/07/02/es6-is-great-but-use-it-cautiously-sergey-abakumoff-medium.html/index.html">http://full.rocks//2017/07/02/es6-is-great-but-use-it-cautiously-sergey-abakumoff-medium.html/index.html</a></p>
-<p>– END –</p>
 
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
+          
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
-  
 </article>
-
-
-
-
-
-
-
-
-
   
   
+    </div></section>
+  
+
+    
+
 </div>
       <footer id="footer">
     <div class="outer">
