@@ -86,7 +86,7 @@
 <body>
   <div id="container">
     <div class="left-col">
-    <div class="overlay"></div>
+    <!--<div class="overlay"></div>-->
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/" class="profilepic">
@@ -127,32 +127,14 @@
                 </section>
                 
                 
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        
-                    </div>
-                </section>
                 
-                
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
-                    
-                    </div>
-                </section>
                 
 
                 
                 
-                <section class="switch-part switch-part4">
+                <section class="switch-part switch-part3">
                 
-                    <div id="js-aboutme">专注于前端</div>
+                    <div id="js-aboutme">前端开发工程师</div>
                 </section>
                 
             </div>
@@ -217,7 +199,7 @@
   <div class="archive-article-inner">
     <header class="archive-article-header">
           <div class="article-meta">
-              <a href="/2017/07/02/es6-is-great-but-use-it-cautiously-sergey-abakumoff-medium.html/" class="archive-article-date">
+              <a href="/2017/07/02/es6-is-great-but-use-it-cautiously-sergey-abakumoff-medium/" class="archive-article-date">
       <time datetime="2017-07-02T12:50:04.000Z" itemprop="datePublished">07-02</time>
 </a>
 
@@ -226,7 +208,7 @@
          
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/02/es6-is-great-but-use-it-cautiously-sergey-abakumoff-medium.html/">【转】ES6虽好，使用需谨慎</a>
+      <a class="archive-article-title" href="/2017/07/02/es6-is-great-but-use-it-cautiously-sergey-abakumoff-medium/">【转】ES6虽好，使用需谨慎</a>
     </h1>
   
 
@@ -258,7 +240,7 @@
         
             <div class="visit">
                 
-                    <span id="busuanzi_container_site_pv" style='display:none'>
+                <span id="busuanzi_container_site_pv" style='display:none'>
                         <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
@@ -279,22 +261,6 @@
     </div>
     
 <script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            var iPad = window.navigator.userAgent.indexOf('iPad');
-            if (iPad > -1 || $(".left-col").css("display") === "none") {
-                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
-                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
-                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
-            }
-            else {
-                var backgroundnum = 5;
-                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
-            }
-        })
-    </script>
 
 
 
